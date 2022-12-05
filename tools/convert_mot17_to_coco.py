@@ -5,7 +5,7 @@ import cv2
 
 
 # Use the same script for MOT16
-DATA_PATH = 'datasets/mot'
+DATA_PATH = '/content/ByteTrack/datasets/mot'
 OUT_PATH = os.path.join(DATA_PATH, 'annotations')
 SPLITS = ['train_half', 'val_half', 'train', 'test']  # --> split training data to train_half and val_half.
 HALF_VIDEO = True
@@ -54,7 +54,7 @@ if __name__ == '__main__':
             for i in range(num_images):
                 if i < image_range[0] or i > image_range[1]:
                     continue
-                img = cv2.imread(os.path.join(data_path, '{}/img1/{:06d}.jpg'.format(seq, i + 1)))
+                img = cv2.imread(os.path.join(data_path, '{}/img1/img{:06d}.jpg'.format(seq, i + 1)))
                 height, width = img.shape[:2]
                 image_info = {'file_name': '{}/img1/{:06d}.jpg'.format(seq, i + 1),  # image name.
                               'id': image_cnt + i + 1,  # image number in the entire training set.
