@@ -54,9 +54,9 @@ if __name__ == '__main__':
             for i in range(num_images):
                 if i < image_range[0] or i > image_range[1]:
                     continue
-                img = cv2.imread(os.path.join(data_path, '{}/img1/img{:06d}.jpg'.format(seq, i + 1)))
+                img = cv2.imread(os.path.join(data_path, '{}/img1/{:06d}.jpg'.format(seq, i + 1)))
                 height, width = img.shape[:2]
-                image_info = {'file_name': '{}/img1/img{:06d}.jpg'.format(seq, i + 1),  # image name.
+                image_info = {'file_name': '{}/img1/{:06d}.jpg'.format(seq, i + 1),  # image name.
                               'id': image_cnt + i + 1,  # image number in the entire training set.
                               'frame_id': i + 1 - image_range[0],  # image number in the video sequence, starting from 1.
                               'prev_image_id': image_cnt + i if i > 0 else -1,  # image number in the entire training set.
